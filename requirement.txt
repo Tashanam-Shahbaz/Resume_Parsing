@@ -1,0 +1,6 @@
+pyngrok==4.1.1
+flask_ngrok
+spacy
+spacy_transformers
+PyMuPDF
+fitz
