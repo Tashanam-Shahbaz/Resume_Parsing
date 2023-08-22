@@ -1,16 +1,17 @@
-from flask import Flask
+from flask import Flask,request
 import spacy
-
-
+from flask_ngrok import run_with_ngrok
+import sys,fitz
 # Create a Flask app instance
 app = Flask(__name__)
+run_with_ngrok(app)
 
 # Define a route and a view function
 @app.route('/')
 def hello_world():
     return 'Hello, World! This is my Flask app.'
 
-@app.route('/resume_parse',method=['GET'])
+@app.route('/resume_parse',methods=['GET'])
 def resume_parse():
 
     resume_path=request.args.get('path','')
@@ -24,7 +25,7 @@ def resume_parse():
     text= text.strip()
     text= ' '.join(text.split())
 
-    nlp = spacy.load('./output/model-best')
+    nlp = spacy.load('./content/output/model-best')
 
     doc = nlp(text)
 
