@@ -2,4 +2,4 @@ pyngrok==4.1.1
 flask_ngrok
 spacy
 spacy_transformers
-PyMuPDF==1.16.14
+PyMuPDF

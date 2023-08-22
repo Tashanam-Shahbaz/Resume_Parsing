@@ -1,7 +1,8 @@
 from flask import Flask,request
 import spacy
 from flask_ngrok import run_with_ngrok
-import sys,fitz
+import sys
+import fitz
 # Create a Flask app instance
 app = Flask(__name__)
 run_with_ngrok(app)
