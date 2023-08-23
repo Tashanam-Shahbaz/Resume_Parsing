@@ -16,7 +16,7 @@ def hello_world():
 def resume_parse():
 
     resume_path=request.args.get('path','')
-    compelete_path = './Document/'+resume_path
+    compelete_path = '/content/Resume_Parsing/Document/'+resume_path
     
     doc = fitz.open(compelete_path)
 
@@ -26,7 +26,7 @@ def resume_parse():
     text= text.strip()
     text= ' '.join(text.split())
 
-    nlp = spacy.load('./content/output/model-best')
+    nlp = spacy.load('/content/output/model-best')
 
     doc = nlp(text)
 
